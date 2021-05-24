@@ -34,6 +34,10 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<scm>
+	<developerConnection>scm:git:https://github.com/arjunxxx/Pet-Clinic.git</developerConnection>
+	</scm>
 
 	<modules>
 		<module>pet-clinic-data</module>
