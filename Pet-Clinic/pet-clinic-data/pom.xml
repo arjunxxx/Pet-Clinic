@@ -3,7 +3,7 @@
 	<parent>
 		<groupId>com.technolearns</groupId>
 		<artifactId>Pet-Clinic</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
 	<groupId>com.technolearns.data</groupId>
 	<artifactId>pet-clinic-data</artifactId>
