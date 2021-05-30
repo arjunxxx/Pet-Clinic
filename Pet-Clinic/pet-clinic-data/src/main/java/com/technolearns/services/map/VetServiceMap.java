@@ -1,11 +1,13 @@
-package com.technolearns.petclinic.services.map;
+package com.technolearns.services.map;
 
 import java.util.Set;
 
-import com.technolearns.petclinic.model.Vet;
-import com.technolearns.petclinic.services.CrudService;
+import org.springframework.stereotype.Service;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long>{
+import com.technolearns.model.Vet;
+import com.technolearns.services.VetService;
+@Service
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService{
 
 	@Override
 	public Vet save(Vet object) {
@@ -30,5 +32,11 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements Crud
 	@Override
 	public void deleteById(Long id) {
 		super.deleteById(id);
+	}
+
+	@Override
+	public Vet findByLastName(String lastName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

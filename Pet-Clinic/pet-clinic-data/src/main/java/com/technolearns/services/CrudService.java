@@ -1,4 +1,4 @@
-package com.technolearns.petclinic.services;
+package com.technolearns.services;
 
 import java.util.Set;
 

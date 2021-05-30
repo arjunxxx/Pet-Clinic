@@ -1,11 +1,14 @@
-package com.technolearns.petclinic.services.map;
+package com.technolearns.services.map;
 
 import java.util.Set;
 
-import com.technolearns.petclinic.model.Pet;
-import com.technolearns.petclinic.services.CrudService;
+import org.springframework.stereotype.Service;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long>{
+import com.technolearns.model.Pet;
+import com.technolearns.services.CrudService;
+import com.technolearns.services.PetService;
+@Service
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService{
 
 	@Override
 	public Pet save(Pet object) {

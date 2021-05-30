@@ -1,4 +1,4 @@
-package com.technolearns.petclinic.model;
+package com.technolearns.model;
 
 public class PetType extends BaseEntity{
 	

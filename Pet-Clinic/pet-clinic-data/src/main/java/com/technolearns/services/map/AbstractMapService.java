@@ -1,4 +1,4 @@
-package com.technolearns.petclinic.services.map;
+package com.technolearns.services.map;
 
 import java.util.HashMap;
 import java.util.HashSet;

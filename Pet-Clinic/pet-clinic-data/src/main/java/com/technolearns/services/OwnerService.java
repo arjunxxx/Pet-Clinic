@@ -1,8 +1,8 @@
-package com.technolearns.petclinic.services;
+package com.technolearns.services;
 
 import java.util.Set;
 
-import com.technolearns.petclinic.model.Owner;
+import com.technolearns.model.Owner;
 
 public interface OwnerService extends CrudService<Owner, Long> {
 

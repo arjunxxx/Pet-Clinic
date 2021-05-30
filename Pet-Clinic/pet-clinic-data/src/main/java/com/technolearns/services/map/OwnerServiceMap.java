@@ -1,12 +1,14 @@
-package com.technolearns.petclinic.services.map;
+package com.technolearns.services.map;
 
-import java.util.HashSet;
 import java.util.Set;
 
-import com.technolearns.petclinic.model.Owner;
-import com.technolearns.petclinic.services.CrudService;
+import org.springframework.stereotype.Service;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long>{
+import com.technolearns.model.Owner;
+import com.technolearns.services.OwnerService;
+
+@Service
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService{
 
 	@Override
 	public Owner save(Owner object) {
@@ -31,6 +33,12 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 	@Override
 	public void deleteById(Long id) {
 		super.deleteById(id);
+	}
+
+	@Override
+	public Owner findByLastName(String lastName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
