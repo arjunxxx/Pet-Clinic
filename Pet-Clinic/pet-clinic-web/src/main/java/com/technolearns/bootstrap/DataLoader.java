@@ -4,8 +4,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.technolearns.model.Owner;
+import com.technolearns.model.PetType;
 import com.technolearns.model.Vet;
 import com.technolearns.services.OwnerService;
+import com.technolearns.services.PetTypeService;
 import com.technolearns.services.VetService;
 
 
@@ -16,16 +18,14 @@ public class DataLoader implements CommandLineRunner {
 	
 	private final OwnerService ownerService;
 	private final VetService vetService;
-	
-	
-	
-	
-	
+	private final PetTypeService petTypeService;
+		
 
-	public DataLoader(OwnerService ownerService, VetService vetService) {
+	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
 		super();
 		this.ownerService = ownerService;
 		this.vetService = vetService;
+		this.petTypeService = petTypeService;
 	}
 
 
@@ -34,6 +34,16 @@ public class DataLoader implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		
+		PetType dog = new PetType();
+		dog.setName("Dog");
+		PetType saveDog = petTypeService.save(dog);
+		
+		PetType cat = new PetType();
+		cat.setName("Cat");
+		PetType saveCat = petTypeService.save(cat);
+		
+		System.out.println("PetTypes Loaded");
 		
 		Owner owner1= new Owner();
 		owner1.setFirstname("James");
@@ -61,6 +71,7 @@ public class DataLoader implements CommandLineRunner {
 		
 		System.out.println("Owner Count = "+ownerService.findAll().size());
 		System.out.println("Vet Count = "+vetService.findAll().size());
+		System.out.println("PetType Count = "+petTypeService.findAll().size());
 		
 		
 		
