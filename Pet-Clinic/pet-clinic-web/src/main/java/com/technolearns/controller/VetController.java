@@ -10,7 +10,6 @@ import com.technolearns.model.Vet;
 import com.technolearns.services.VetService;
 
 @Controller
-@RequestMapping("/vets")
 public class VetController {
 	
 	
@@ -25,7 +24,7 @@ public class VetController {
 
 
 
-	@RequestMapping({"","/index","/index.html"})
+	@RequestMapping({"/vets","/vets/index","/index.html","/vets.html"})
 	public String index(Model model){
 		Set<Vet> vets = vetService.findAll();
 		model.addAttribute("vets",vets);
