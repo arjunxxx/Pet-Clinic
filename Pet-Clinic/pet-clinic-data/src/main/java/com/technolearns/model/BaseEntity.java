@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-@MappedSuperclass
+@MappedSuperclass //To specify that its just a parent class and do not need separate column in DB. It just gives attributes to sub classes.
 public class BaseEntity implements Serializable {
 	
 	/**
