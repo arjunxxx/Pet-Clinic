@@ -1,5 +1,7 @@
 package com.technolearns.services.springdatajpa;
 
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
@@ -22,7 +24,7 @@ public class VetSDJPAService implements VetService {
 
 	@Override
 	public Set<Vet> findAll() {
-		return (Set<Vet>) vetRepository.findAll();
+		return new HashSet<Vet>((Collection<? extends Vet>) vetRepository.findAll());
 	}
 
 	@Override

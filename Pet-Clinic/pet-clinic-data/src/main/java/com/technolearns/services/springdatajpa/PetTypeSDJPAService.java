@@ -1,5 +1,7 @@
 package com.technolearns.services.springdatajpa;
 
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
@@ -22,7 +24,7 @@ public class PetTypeSDJPAService implements PetTypeService {
 
 	@Override
 	public Set<PetType> findAll() {
-		return (Set<PetType>) petTypeRepository.findAll();
+		return new HashSet<PetType>((Collection<? extends PetType>) petTypeRepository.findAll());
 	}
 
 	@Override

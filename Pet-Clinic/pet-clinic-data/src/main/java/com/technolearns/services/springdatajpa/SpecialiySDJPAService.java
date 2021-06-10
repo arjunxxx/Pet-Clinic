@@ -1,5 +1,7 @@
 package com.technolearns.services.springdatajpa;
 
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
@@ -22,7 +24,7 @@ public class SpecialiySDJPAService implements SpecialityService {
 
 	@Override
 	public Set<Speciality> findAll() {
-		return (Set<Speciality>) specialityRepository.findAll();
+		return new HashSet<Speciality>((Collection<? extends Speciality>) specialityRepository.findAll());
 	}
 
 	@Override
