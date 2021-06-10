@@ -3,12 +3,14 @@ package com.technolearns.services.springdatajpa;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 import com.technolearns.model.Pet;
 import com.technolearns.repositories.PetRepository;
 import com.technolearns.services.PetService;
 
 @Profile("springdatajpa")
+@Service
 public class PetSDJPAService implements PetService {
 
 	private PetRepository petRepository;

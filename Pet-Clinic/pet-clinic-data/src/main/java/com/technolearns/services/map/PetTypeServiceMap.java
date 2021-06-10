@@ -2,13 +2,15 @@ package com.technolearns.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import com.technolearns.model.Pet;
 import com.technolearns.model.PetType;
 import com.technolearns.services.PetTypeService;
+
 @Service
-public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService{
+@Profile({ "default", "map" })
+public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
 
 	@Override
 	public PetType save(PetType object) {
@@ -18,21 +20,21 @@ public class PetTypeServiceMap extends AbstractMapService<PetType, Long> impleme
 	@Override
 	public Set<PetType> findAll() {
 		return super.findAll();
-	} 
- 
+	}
+
 	@Override
 	public PetType findById(Long id) {
 		return super.findById(id);
 	}
-    
+
 	@Override
 	public void delete(PetType object) {
 		super.delete(object);
 	}
-	
+
 	@Override
 	public void deleteById(Long id) {
 		super.deleteById(id);
 	}
-	
+
 }

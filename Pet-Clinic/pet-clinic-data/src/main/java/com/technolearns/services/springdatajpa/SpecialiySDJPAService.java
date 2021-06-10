@@ -3,12 +3,14 @@ package com.technolearns.services.springdatajpa;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 import com.technolearns.model.Speciality;
 import com.technolearns.repositories.SpecialityRepository;
 import com.technolearns.services.SpecialityService;
 
 @Profile("springdatajpa")
+@Service
 public class SpecialiySDJPAService implements SpecialityService {
 
 	private SpecialityRepository specialityRepository;

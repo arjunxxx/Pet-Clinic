@@ -2,17 +2,18 @@ package com.technolearns.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.technolearns.model.Vet;
 import com.technolearns.services.SpecialityService;
 import com.technolearns.services.VetService;
+
 @Service
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService{
-	
+@Profile({ "default", "map" })
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+
 	private SpecialityService specialityService;
-	
-	
 
 	public VetServiceMap(SpecialityService specialityService) {
 		super();
@@ -21,11 +22,11 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 
 	@Override
 	public Vet save(Vet object) {
-		if(object!=null&&object.getSpecialities()!=null&&!object.getSpecialities().isEmpty()) {
-			object.getSpecialities().forEach(speciality->{
-				specialityService.save(speciality);					
+		if (object != null && object.getSpecialities() != null && !object.getSpecialities().isEmpty()) {
+			object.getSpecialities().forEach(speciality -> {
+				specialityService.save(speciality);
 			});
-			
+
 		}
 		return super.save(object);
 	}
@@ -33,18 +34,18 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 	@Override
 	public Set<Vet> findAll() {
 		return super.findAll();
-	} 
- 
+	}
+
 	@Override
 	public Vet findById(Long id) {
 		return super.findById(id);
 	}
-    
+
 	@Override
 	public void delete(Vet object) {
 		super.delete(object);
 	}
-	
+
 	@Override
 	public void deleteById(Long id) {
 		super.deleteById(id);
