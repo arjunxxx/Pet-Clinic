@@ -1,11 +1,11 @@
 package com.technolearns.services;
 
-import java.util.Set;
+import java.util.List;
 
 import com.technolearns.model.Owner;
 
 public interface OwnerService extends CrudService<Owner, Long> {
 
-	Owner findByLastName(String lastName);
+	List<Owner> findByLastName(String lastName);
 
 }

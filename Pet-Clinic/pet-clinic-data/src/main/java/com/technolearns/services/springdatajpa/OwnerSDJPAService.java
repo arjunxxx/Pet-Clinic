@@ -1,5 +1,6 @@
 package com.technolearns.services.springdatajpa;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
@@ -59,7 +60,7 @@ public class OwnerSDJPAService implements OwnerService {
 	}
 
 	@Override
-	public Owner findByLastName(String lastName) {
+	public List<Owner> findByLastName(String lastName) {
 
 		return ownerRepository.findByLastname(lastName);
 	}

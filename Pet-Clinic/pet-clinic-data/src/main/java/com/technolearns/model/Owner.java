@@ -10,19 +10,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Getter
 @Setter
+@SuperBuilder // TO GET PARENTATTRIBUTES ON BUILD PATTERN
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Table(name = "owners")
 public class Owner extends Person {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Column(name = "address")
 	private String address;

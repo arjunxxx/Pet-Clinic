@@ -1,6 +1,8 @@
 package com.technolearns.services.map;
 
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -60,9 +62,8 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 	}
 
 	@Override
-	public Owner findByLastName(String lastName) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Owner> findByLastName(String lastName) {
+		return findAll().stream().filter(owner -> owner.getLastname().equals(lastName)).collect(Collectors.toList());
 	}
 
 }
